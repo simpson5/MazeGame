@@ -2,4 +2,18 @@
 
 body {
   background-color: #ddc9c9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.maze {
+  background-color: wheat;
+  width: 400px;
+  height: 400px;
+}
+
+.set {
+  display: block;
 }
