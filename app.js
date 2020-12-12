@@ -5,9 +5,9 @@ const set = document.getElementById("jsSet")
 maze.width = 400;
 maze.height = 400;
 
-const a = 0;
-const b = 0;
-const x =50;
+let a = 0;
+let b = 0;
+const c =50;
 
 ctx.fillStyle = `rgb(50,50,50)`;
 ctx.fillRect(a, b, 50, 50);
@@ -19,9 +19,26 @@ let start = false;
 
 
 function userMove(event){
-    if(event.keyCord == 39){
-        b=b+x;
-        console.log(10)
+    ctx.clearRect(a,b,50,50);
+    if(event.keyCode == 39){
+        a=a+c;
+        ctx.fillStyle = `rgb(50,50,50)`;
+        ctx.fillRect(a, b, 50, 50);
+    }
+    if(event.keyCode == 37){
+        a=a-c;
+        ctx.fillStyle = `rgb(50,50,50)`;
+        ctx.fillRect(a, b, 50, 50);
+    }
+    if(event.keyCode == 38){
+        b=b-c;
+        ctx.fillStyle = `rgb(50,50,50)`;
+        ctx.fillRect(a, b, 50, 50);
+    }
+    if(event.keyCode == 40){
+        b=b+c;
+        ctx.fillStyle = `rgb(50,50,50)`;
+        ctx.fillRect(a, b, 50, 50);
     }
 }
 
@@ -44,11 +61,16 @@ function starting(){
 
 }
 
+function ending(){
+    document.appendChild
+}
+
 if(maze){
     maze.addEventListener("mousemove",onMouseMove);
-    maze.addEventListener("mousedown",starting)
-    window.addEventListener("keydown",userMove);
+    maze.addEventListener("mousedown",starting);
 }
+
+document.addEventListener("keydown",userMove);
 
 
 
