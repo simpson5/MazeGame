@@ -1,6 +1,7 @@
 const maze = document.getElementById("jsMaze");
 const ctx = maze.getContext("2d");
-const set = document.getElementById("jsSet")
+const set = document.getElementById("jsSet");
+const body  =document.querySelector("body");
 
 maze.width = 400;
 maze.height = 400;
@@ -40,6 +41,12 @@ function userMove(event){
         ctx.fillStyle = `rgb(50,50,50)`;
         ctx.fillRect(a, b, 50, 50);
     }
+    ctx.fillStyle = `rgb(50,50,50)`;
+    ctx.fillRect(350, 350, 50, 50);
+
+    setTimeout(function(){
+        if(a==350&&b==350){ending();}
+    },100);
 }
 
 function onMouseMove(event){
@@ -62,7 +69,7 @@ function starting(){
 }
 
 function ending(){
-    document.appendChild
+    alert("끝났습니다.");
 }
 
 if(maze){
@@ -71,7 +78,6 @@ if(maze){
 }
 
 document.addEventListener("keydown",userMove);
-
 
 
 
